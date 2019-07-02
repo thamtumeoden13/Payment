@@ -8,7 +8,10 @@ import { Search } from '../../components/mainapp/header/SearchBar';
 
 export default class Home extends Component {
     static navigationOptions = {
-        // headerTitle: <Search />
+        headerTitle: <Search />,
+        headerStyle: {
+            height: 120,
+        }
     }
     render() {
         return (
