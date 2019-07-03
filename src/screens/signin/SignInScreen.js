@@ -7,9 +7,9 @@ import {
     UIManager,
     TouchableOpacity
 } from 'react-native';
-import {  Divider } from 'react-native-elements';
+import { Divider } from 'react-native-elements';
 import { Logo, SignInInput, SignInButton, SignInSocial } from '../../components/signin'
- 
+
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
     UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -60,7 +60,7 @@ export default class SignInScreen extends Component {
                     <View style={styles.signInView}>
                         <Logo />
                         <SignInInput />
-                        <SignInButton />
+                        <SignInButton onPress={this.signIn} isLoading={isLoading} />
                         <View style={{ height: 50 }}>
                             <TouchableOpacity>
                                 <Text style={{ color: '#03a5db' }}>Forgot Password</Text>

@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text } from 'react-native'
 import { Input, Icon, Button } from 'react-native-elements';
+// import {useNavigation} from 'react-navigation-hooks'
 
-
-export const SignInButton = () => {
+export const SignInButton = (props) => {
     
-    const [isLoading, setIsLoading] = useState(false)
+    // const [isLoading, setIsLoading] = useState(false)
+    // const { navigate } = useNavigation();
+
     return (
         <View>
             <Button
                 title="SIGN IN"
                 activeOpacity={1}
                 underlayColor="transparent"
-                // onPress={this.signIn}
-                loading={isLoading}
+                onPress={props.onPress}
+                loading={props.isLoading}
                 loadingProps={{ size: 'small', color: 'white' }}
-                disabled={isLoading}
+                disabled={props.isLoading}
                 buttonStyle={{
                     height: 50,
                     width: 150,

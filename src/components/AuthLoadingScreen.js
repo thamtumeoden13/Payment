@@ -3,6 +3,7 @@ import {
     ActivityIndicator,
     StatusBar,
     View,
+    StyleSheet
 } from 'react-native';
 
 
@@ -18,16 +19,25 @@ export default class AuthLoadingScreen extends React.Component {
         const userToken = 'userName'
         // This will switch to the App screen or Auth screen and this loading
         // screen will be unmounted and thrown away.
-        this.props.navigation.navigate(userToken ? 'Auth' : 'App');
-    }; 
+        setTimeout(() => {
+            this.props.navigation.navigate(userToken ? 'Auth' : 'App')
+        }, 1500);
+    }
 
     // Render any loading content that you like here
     render() {
         return (
-            <View>
-                <ActivityIndicator />
-                <StatusBar barStyle="default" />
+            <View style={styles.container}>
+                <ActivityIndicator size="large" color="#0000ff" />
+                {/* <StatusBar backgroundColor="red" barStyle="dark-content" hidden /> */}
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center'
+    }
+})

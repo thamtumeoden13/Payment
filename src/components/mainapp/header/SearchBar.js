@@ -1,17 +1,17 @@
 
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import { SearchBar, Input, Icon } from 'react-native-elements';
 
 export const Search = () => {
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState('a')
 
     return (
         <View style={styles.container}>
             <View style={styles.frmSearch}>
                 <Input
                     value={input}
-                    onChangeText={input => setInput({ input })}
+                    onChangeText={input => setInput(input)}
                     placeholder="Username"
                     returnKeyType="next"
                     inputContainerStyle={styles.inputContainer}
@@ -27,12 +27,14 @@ export const Search = () => {
                 />
             </View>
             <View style={styles.groupbtn}>
-                <Icon
-                    name="bell-o"
-                    type="font-awesome"
-                    color="rgba(171, 189, 219, 1)"
-                    size={25}
-                />
+                <TouchableOpacity>
+                    <Icon
+                        name="bell-o"
+                        type="font-awesome"
+                        color="rgba(171, 189, 219, 1)"
+                        size={25}
+                    />
+                </TouchableOpacity>
             </View>
         </View>
     )

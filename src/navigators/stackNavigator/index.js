@@ -1,9 +1,9 @@
 import { createStackNavigator } from 'react-navigation';
 
-import Home from '../../screens/home/Home';
-// import XoneRadio from '../../screens/xoneradio/XoneRadio';
-// import Schedule from '../../screens/xoneradio/Schedule'
-// import XoneTV from '../../screens/xonetv/XoneTV';
+import Home from '../../screens/home';
+import History from '../../screens/history';
+import Gift from '../../screens/gift'
+import Profile from '../../screens/profile';
 // import News from '../../screens/news/News';
 // import SignOut from '../../screens/SignOut/SignOutScreen'
 
@@ -15,6 +15,29 @@ export const HomeStack = createStackNavigator(
     }
 );
 
+export const HistoryStack = createStackNavigator(
+    {
+        History: {
+            screen: History
+        }
+    }
+);
+
+export const GiftStack = createStackNavigator(
+    {
+        Gift: {
+            screen: Gift
+        }
+    }
+);
+
+export const ProfileStack = createStackNavigator(
+    {
+        Profile: {
+            screen: Profile
+        }
+    }
+);
 // export const XoneRadioStack = createStackNavigator(
 //     {
 //         XoneRadio: {

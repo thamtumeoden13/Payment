@@ -7,46 +7,41 @@ import { Icon } from 'react-native-elements';
 
 import {
     HomeStack,
-    // XoneRadioStack, XoneTVStack, NewsStack, SignOutStack
+    HistoryStack,
+    GiftStack,
+    ProfileStack
 } from '../stackNavigator'
 
 export const Tabs = createBottomTabNavigator(
     {
-        // XoneRadio: {
-        //     screen: XoneRadioStack,
-        //     navigationOptions: {
-        //         tabBarLabel: 'Xone Radio',
-        //         tabBarIcon: ({ tintColor }) => <Icon name="radio" type="entypo" size={28} color={tintColor} />
-        //     },
-        // },
-        // XoneTV: {
-        //     screen: XoneTVStack,
-        //     navigationOptions: {
-        //         tabBarLabel: 'Xone Tv',
-        //         tabBarIcon: ({ tintColor }) => <Icon name="tv" type="entypo" size={28} color={tintColor} />
-        //     },
-        // },
         Home: {
             screen: HomeStack,
             navigationOptions: {
                 tabBarLabel: 'Home',
-                tabBarIcon: ({ tintColor }) => <Icon name="home" type="entypo" size={28} color={tintColor} />
+                tabBarIcon: ({ tintColor }) => <Icon name="home" type="font-awesome" size={28} color={tintColor} />
             },
         },
-        // News: {
-        //     screen: NewsStack,
-        //     navigationOptions: {
-        //         tabBarLabel: 'News',
-        //         tabBarIcon: ({ tintColor }) => <Icon name="news" type="entypo" size={28} color={tintColor} />
-        //     },
-        // },
-        // SignOut: {
-        //     screen: SignOutStack,
-        //     navigationOptions: {
-        //         tabBarLabel: 'SignOut',
-        //         tabBarIcon: ({ tintColor }) => <Icon name="log-out" type="entypo" size={28} color={tintColor} />
-        //     },
-        // }
+        History: {
+            screen: HistoryStack,
+            navigationOptions: {
+                tabBarLabel: 'History',
+                tabBarIcon: ({ tintColor }) => <Icon name="history" type="font-awesome" size={28} color={tintColor} />
+            },
+        },
+        Gift: {
+            screen: GiftStack,
+            navigationOptions: {
+                tabBarLabel: 'Gift',
+                tabBarIcon: ({ tintColor }) => <Icon name="gift" type="font-awesome" size={28} color={tintColor} />
+            },
+        },
+        Profile: {
+            screen: ProfileStack,
+            navigationOptions: {
+                tabBarLabel: 'Profile',
+                tabBarIcon: ({ tintColor }) => <Icon name="user" type="font-awesome" size={28} color={tintColor} />
+            },
+        },
     },
     {
         initialRouteName: 'Home'
