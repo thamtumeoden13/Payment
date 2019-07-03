@@ -20,7 +20,7 @@ export default class Home extends Component {
     static navigationOptions = {
         headerTitle: <Search />,
         headerStyle: {
-            height: 120,
+            height: 140,
         }
     }
     _renderItem = ({ item }) => (

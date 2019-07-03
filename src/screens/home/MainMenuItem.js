@@ -33,6 +33,7 @@ export const MainMenuItem = ({ item, numColumns }) => {
             <View style={[styles.item, styles.itemVisible]} />
         )
     }
+    const size = Math.floor((Dimensions.get('window').width / numColumns) / 3)
     return (
         <View style={{flex: 1}}>
             <TouchableOpacity>
@@ -41,7 +42,7 @@ export const MainMenuItem = ({ item, numColumns }) => {
                         name={item.icon.name}
                         type={item.icon.type}
                         color={item.icon.color}
-                        size={item.icon.size}
+                        size={size}
                     />
                     <Text style={styles.itemText}>
                         {item.title}

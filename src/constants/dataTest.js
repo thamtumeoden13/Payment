@@ -76,7 +76,6 @@ export const dataMainMenu = [
             name: 'water',
             type: 'material-community',
             color: 'black',
-            size: 50
         }
     },
     {
@@ -86,7 +85,6 @@ export const dataMainMenu = [
             name: 'aircraft',
             type: 'entypo',
             color: 'black',
-            size: 50
         }
     },
     {
@@ -96,7 +94,6 @@ export const dataMainMenu = [
             name: 'broadcast',
             type: 'octicon',
             color: 'black',
-            size: 50
         }
     },
     {
@@ -106,7 +103,6 @@ export const dataMainMenu = [
             name: 'tv',
             type: 'entypo',
             color: 'black',
-            size: 50
         }
     },
     {
@@ -116,7 +112,6 @@ export const dataMainMenu = [
             name: 'gift',
             type: 'feather',
             color: 'black',
-            size: 50
         }
     },
 ]

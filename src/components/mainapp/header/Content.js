@@ -56,7 +56,7 @@ export const Content = () => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: 80,
+        height: 90,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: '30%',
+
     },
     contentIcon: {
         justifyContent: 'center',
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
     contentTitle: {
         height: 20,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop: 8
     }
 })

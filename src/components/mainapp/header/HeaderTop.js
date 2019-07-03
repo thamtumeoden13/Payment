@@ -15,15 +15,21 @@ export const HeaderTop = () => {
                     placeholder="Type here..."
                     returnKeyType="next"
                     inputContainerStyle={styles.inputContainer}
-                    leftIcon={<Icon name="search" type="font-awesome" color="black" size={18} />}
                     inputStyle={styles.inputStyle}
                     autoFocus={false}
                     autoCapitalize="none"
                     keyboardAppearance="dark"
-                    errorStyle={styles.errorInputStyle}
                     autoCorrect={false}
                     blurOnSubmit={false}
                     placeholderTextColor="#7384B4"
+                    leftIcon={<Icon name="search" type="font-awesome" color="#7384B4" size={18} />}
+                    rightIcon={
+                        input.length > 0 ?
+                            <TouchableOpacity onPress={() => setInput('')}>
+                                <Icon name="remove" type="font-awesome" color="#7384B4" size={18} right={10} />
+                            </TouchableOpacity>
+                            : <View></View>
+                    }
                 />
             </View>
             <View style={styles.notification}>
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
         paddingLeft: 8,
         borderRadius: 40,
         borderWidth: 1,
-        borderColor: 'black',
+        borderColor: '#7384B4',
         height: 40,
         marginVertical: 10,
     },
@@ -67,11 +73,6 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: 'black',
         fontSize: 16,
-    },
-    errorInputStyle: {
-        marginTop: 0,
-        textAlign: 'center',
-        color: '#F44336',
     },
     notification: {
         width: '10%',
