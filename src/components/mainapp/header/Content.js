@@ -38,8 +38,8 @@ export const Content = () => {
                 <View style={styles.contentIcon}>
                     <TouchableOpacity>
                         <Icon
-                            name="credit-card"
-                            type="font-awesome"
+                            name="credit-card-plus"
+                            type="material-community"
                             color="black"
                             size={20}
                         />
@@ -56,7 +56,7 @@ export const Content = () => {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: 70,
+        height: 80,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'
