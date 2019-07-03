@@ -4,7 +4,7 @@ import {
     Text,
     View,
 } from 'react-native';
-import { Search } from '../../components/mainapp/header/SearchBar';
+import { Search } from '../../components/mainapp/header';
 
 export default class Home extends Component {
     static navigationOptions = {

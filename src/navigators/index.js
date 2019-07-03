@@ -13,6 +13,6 @@ export const CreateAppContainer = createAppContainer(createSwitchNavigator(
         App: AppStack,
     },
     {
-        initialRouteName: 'AuthLoading',
+        initialRouteName: 'App',
     }
 ));
