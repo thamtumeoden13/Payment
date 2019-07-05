@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import { SearchBar, Icon } from 'react-native-elements'
 
-// import { Search } from '../../components/mainapp/header/SearchBar';
 import { dataHistory } from '../../constants/dataTest'
 
 import { HistoryItem } from '../../components/history/HistoryItem'
@@ -17,14 +16,16 @@ export default class History extends Component {
         // headerStyle: {
         //     height: 120,
         // }
-        title: 'Lịch sử'
+        title: "Lịch sử"
     }
     constructor(props) {
         super(props);
         this.state = {
             search: ''
         }
+        this.gotoHistoryDetail = this.gotoHistoryDetail.bind(this)
     }
+
     _renderSectionHeader = ({ section }) => {
         return (
             <View style={styles.SectionListHeader}> 
@@ -40,28 +41,22 @@ export default class History extends Component {
             <HistoryItem
                 section={section}
                 item={item}
+                onPress={this.gotoHistoryDetail}
             />
         )
     }
 
     _keyExtractor = (item, index) => index;
 
-    GetSectionListItem = (item) => {
-        Alert.alert(
-            item.title,
-            item.time + '/' + item.status,
-            [
-                { text: 'OK', onPress: () => console.log('OK Pressed') },
-            ],
-            { cancelable: false },
-        );
+    gotoHistoryDetail = (item) => {
+        this.props.navigation.navigate('HistoryDetail')
     }
 
     render() {
         const { search } = this.state
         return (
             <View style={styles.container}>
-                <SearchBar
+                {/* <SearchBar
                     placeholder="Type Here..."
                     value={search}
                     inputContainerStyle={{ backgroundColor: '#EFF7FD' }}
@@ -70,7 +65,7 @@ export default class History extends Component {
                     clearIcon={{ size: 24, color: 'red' }}
                     lightTheme={true}
                     containerStyle={{ width: '100%' }}
-                />
+                /> */}
                 <View style={styles.viewSectionList}>
                     <SectionList
                         sections={dataHistory}

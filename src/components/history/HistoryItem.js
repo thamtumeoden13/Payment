@@ -7,10 +7,14 @@ import {
 } from 'react-native';
 import { SearchBar, Icon } from 'react-native-elements'
 
-export const HistoryItem = ({ section, item }) => {
+import { useNavigation } from 'react-navigation-hooks'
+
+export const HistoryItem = ({ section, item, onPress }) => {
+
+    const { navigate } = useNavigation();
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
             <View style={styles.container}>
                 <View style={styles.containerIcon}>
                     <Icon
