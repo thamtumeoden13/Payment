@@ -25,7 +25,7 @@ export const Tabs = createBottomTabNavigator(
             screen: HistoryStack,
             navigationOptions: {
                 tabBarLabel: 'History',
-                tabBarIcon: ({ tintColor }) => <Icon name="history" type="font-awesome" size={28} color={tintColor} />
+                tabBarIcon: ({ tintColor }) => <Icon name="history" type="font-awesome" size={28} color={tintColor} />,
             },
         },
         Gift: {

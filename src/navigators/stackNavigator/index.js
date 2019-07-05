@@ -4,71 +4,41 @@ import Home from '../../screens/home';
 import History from '../../screens/history';
 import Gift from '../../screens/gift'
 import Profile from '../../screens/profile';
-// import News from '../../screens/news/News';
-// import SignOut from '../../screens/SignOut/SignOutScreen'
+import Wallet from '../../screens/wallet';
+import BankConnected from '../../screens/bankconnected'
 
 export const HomeStack = createStackNavigator(
     {
-        Home: {
-            screen: Home
-        }
+        Home: Home,
+        Wallet: Wallet,
+        BankConnected: BankConnected
     }
 );
 
+HomeStack.navigationOptions = ({ navigation }) => {
+    let tabBarVisible = true;
+    if (navigation.state.index > 0) {
+        tabBarVisible = false;
+    }
+    return {
+        tabBarVisible,
+    };
+};
+
 export const HistoryStack = createStackNavigator(
     {
-        History: {
-            screen: History
-        }
+        History: History
     }
 );
 
 export const GiftStack = createStackNavigator(
     {
-        Gift: {
-            screen: Gift
-        }
+        Gift: Gift
     }
 );
 
 export const ProfileStack = createStackNavigator(
     {
-        Profile: {
-            screen: Profile
-        }
+        Profile: Profile
     }
 );
-// export const XoneRadioStack = createStackNavigator(
-//     {
-//         XoneRadio: {
-//             screen: XoneRadio
-//         },
-//         Schedule: {
-//             screen: Schedule
-//         },
-//     }
-// );
-
-// export const XoneTVStack = createStackNavigator(
-//     {
-//         XoneTV: {
-//             screen: XoneTV
-//         }
-//     }
-// );
-
-// export const NewsStack = createStackNavigator(
-//     {
-//         News: {
-//             screen: News
-//         }
-//     }
-// );
-
-// export const SignOutStack = createStackNavigator(
-//     {
-//         SignOut: {
-//             screen: SignOut
-//         }
-//     }
-// );

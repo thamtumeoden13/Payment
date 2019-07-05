@@ -115,3 +115,108 @@ export const dataMainMenu = [
         }
     },
 ]
+
+export const dataHistory = [
+    {
+        year: '2019',
+        month: '1',
+        data: [
+            {
+                key: 1,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 2,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 3,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 4,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 5,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+        ]
+    },
+    {
+        year: '2019',
+        month: '12',
+        data: [
+            {
+                key: 1,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 2,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 3,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 4,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+            {
+                key: 5,
+                title: 'Mua Hàng tại Tiki.vn',
+                day: '20',
+                hours: '16',
+                minute: '40',
+                cost: '143,000',
+                currency: 'VND'
+            },
+        ]
+    },
+]

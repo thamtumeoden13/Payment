@@ -2,9 +2,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Button } from 'react-native'
 import { SearchBar, Input, Icon } from 'react-native-elements';
+import { useNavigation } from 'react-navigation-hooks'
 
-export const Content = () => {
+export const Content = (props) => {
     const [input, setInput] = useState('')
+
+    const { navigate } = useNavigation();
 
     return (
         <View style={styles.container}>
@@ -25,7 +28,7 @@ export const Content = () => {
             </View>
             <View style={styles.containerItem}>
                 <View style={styles.contentIcon}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigate('Wallet') }}>
                         <Text style={{ color: 'black', fontSize: 10, textAlign: 'center' }}>Số dư</Text>
                         <Text style={{ color: 'black', fontSize: 10, fontWeight: 'bold', textAlign: 'center' }}>VND</Text>
                     </TouchableOpacity>
@@ -36,7 +39,7 @@ export const Content = () => {
             </View>
             <View style={styles.containerItem}>
                 <View style={styles.contentIcon}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigate('BankConnected') }}>
                         <Icon
                             name="credit-card-plus"
                             type="material-community"
