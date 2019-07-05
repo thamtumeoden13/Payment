@@ -12,10 +12,6 @@ import { dataHistory } from '../../constants/dataTest'
 import { HistoryItem } from '../../components/history/HistoryItem'
 export default class History extends Component {
     static navigationOptions = {
-        // headerTitle: <Search />,
-        // headerStyle: {
-        //     height: 120,
-        // }
         title: "Lịch sử"
     }
     constructor(props) {
@@ -56,7 +52,7 @@ export default class History extends Component {
         const { search } = this.state
         return (
             <View style={styles.container}>
-                {/* <SearchBar
+                <SearchBar
                     placeholder="Type Here..."
                     value={search}
                     inputContainerStyle={{ backgroundColor: '#EFF7FD' }}
@@ -65,7 +61,7 @@ export default class History extends Component {
                     clearIcon={{ size: 24, color: 'red' }}
                     lightTheme={true}
                     containerStyle={{ width: '100%' }}
-                /> */}
+                />
                 <View style={styles.viewSectionList}>
                     <SectionList
                         sections={dataHistory}
@@ -91,6 +87,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "flex-start",
         backgroundColor: '#64B5F6',
+        marginHorizontal: 5
     },
     SectionListHeaderText: {
         fontSize: 16,

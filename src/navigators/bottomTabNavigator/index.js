@@ -44,7 +44,7 @@ export const Tabs = createBottomTabNavigator(
         },
     },
     {
-        initialRouteName: 'Home'
+        initialRouteName: 'Profile'
     }
 );
 Tabs.navigationOptions = {

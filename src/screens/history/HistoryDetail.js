@@ -3,14 +3,62 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    FlatList
 } from 'react-native';
-// import { Search } from '../../components/mainapp/header/SearchBar';
+
+const data = [
+    {
+        titleLeft: "Loại dịch vụ",
+        titleRight: "Thanh toán đơn hàng"
+    },
+    {
+        titleLeft: "Giá ban đầu",
+        titleRight: "286.000 VND"
+    },
+    {
+        titleLeft: "Ưu đãi",
+        titleRight: "143.000 VND"
+    },
+    {
+        titleLeft: "Phí giao dịchu",
+        titleRight: "0 VND"
+    },
+    {
+        titleLeft: "Thời gian",
+        titleRight: "28/08/2018 16:40"
+    },
+    {
+        titleLeft: "Mã giao dịch",
+        titleRight: "xxxxxx-xxxxxxxxxxxxxxxxx"
+    }
+]
 
 export default class HistoryDetail extends Component {
     static navigationOptions = {
         title: 'Chi tiết giao dịch'
     }
+
+    _renderItem = ({ item }) => {
+
+        return (
+            <View style={styles.containerMiddle}>
+                <View style={styles.detail}>
+                    <View style={styles.detailLeft}>
+                        <Text style={styles.detailContent}>
+                            {item.titleLeft}
+                        </Text>
+                    </View>
+                    <View style={styles.detailRight}>
+                        <Text style={styles.detailContent}>
+                            {item.titleRight}
+                        </Text>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -22,80 +70,11 @@ export default class HistoryDetail extends Component {
                         VND
                     </Text>
                 </View>
-                <View style={styles.containerMiddle}>
-                    <View style={styles.detail}>
-                        <View style={styles.detailLeft}>
-                            <Text style={styles.detailContent}>
-                                Loại dịch vụ
-                        </Text>
-                        </View>
-                        <View style={styles.detailRight}>
-                            <Text style={styles.detailContent}>
-                                Thanh toán đơn hàng
-                            </Text>
-                        </View>
-                    </View>
-                    <View style={styles.detail}>
-                        <View style={styles.detailLeft}>
-                            <Text style={styles.detailContent}>
-                                Giá ban đầu
-                        </Text>
-                        </View>
-                        <View style={styles.detailRight}>
-                            <Text style={styles.detailContent}>
-                                286.000 VND
-                            </Text>
-                        </View>
-                    </View>
-                    <View style={styles.detail}>
-                        <View style={styles.detailLeft}>
-                            <Text style={styles.detailContent}>
-                                Ưu đãi
-                        </Text>
-                        </View>
-                        <View style={styles.detailRight}>
-                            <Text style={styles.detailContent}>
-                                143.000 VND
-                            </Text>
-                        </View>
-                    </View>
-                    <View style={styles.detail}>
-                        <View style={styles.detailLeft}>
-                            <Text style={styles.detailContent}>
-                                Phí giao dịch
-                        </Text>
-                        </View>
-                        <View style={styles.detailRight}>
-                            <Text style={styles.detailContent}>
-                                0 VND
-                            </Text>
-                        </View>
-                    </View>
-                    <View style={styles.detail}>
-                        <View style={styles.detailLeft}>
-                            <Text style={styles.detailContent}>
-                                Thời gian
-                        </Text>
-                        </View>
-                        <View style={styles.detailRight}>
-                            <Text style={styles.detailContent}>
-                                28/08/2018 16:40
-                            </Text>
-                        </View>
-                    </View>
-                    <View style={styles.detail}>
-                        <View style={styles.detailLeft}>
-                            <Text style={styles.detailContent}>
-                                Mã giao dịch
-                        </Text>
-                        </View>
-                        <View style={styles.detailRight}>
-                            <Text style={styles.detailContent}>
-                                xxxxxx-xxxxxxxxxxxxxxxxx
-                            </Text>
-                        </View>
-                    </View>
-                </View>
+                <FlatList
+                    data={data}
+                    renderItem={this._renderItem}
+                    keyExtractor={(item, index) => index.toString()}
+                />
                 <View style={styles.containerBottom}>
                     <TouchableOpacity>
                         <Text style={styles.otherBottom}>
@@ -121,28 +100,24 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        // backgroundColor: 'red',
         flexWrap: "wrap"
     },
     containerMiddle: {
         flex: 2,
         width: "100%",
         justifyContent: "flex-start",
-        // backgroundColor: 'blue',
     },
     containerBottom: {
         flex: 1,
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
-        // backgroundColor: 'green'
     },
     title: {
         fontSize: 36,
         fontWeight: "bold",
         textAlign: 'center',
         // margin: 10,
-        // backgroundColor: "yellow"
     },
     currency: {
         fontSize: 14,
@@ -150,7 +125,6 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         marginHorizontal: 5,
         paddingTop: 10,
-        // backgroundColor: "pink",
     },
     detail: {
         height: 40,
@@ -163,7 +137,6 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
         marginTop: 5,
         paddingHorizontal: 10
-        // backgroundColor: "red"
     },
     detailRight: {
         width: "60%",
@@ -171,7 +144,6 @@ const styles = StyleSheet.create({
         alignItems: "flex-end",
         marginTop: 5,
         paddingHorizontal: 10
-        // backgroundColor: "white"
     },
     detailContent: {
         fontSize: 14,

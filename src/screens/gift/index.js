@@ -4,14 +4,9 @@ import {
     Text,
     View,
 } from 'react-native';
-// import { Search } from '../../components/mainapp/header/SearchBar';
 
 export default class Gift extends Component {
     static navigationOptions = {
-        // headerTitle: <Search />,
-        // headerStyle: {
-        //     height: 120,
-        // }
         title: 'Ưu đãi'
     }
     render() {

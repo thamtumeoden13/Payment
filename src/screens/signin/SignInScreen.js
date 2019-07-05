@@ -71,7 +71,6 @@ export default class SignInScreen extends Component {
                             width: '100%', height: 20,
                             justifyContent: 'center',
                             alignItems: 'center',
-                            // backgroundColor: 'green',
                             marginBottom: 30
                         }}>
                             <Divider style={{ height: 1, width: '35%', backgroundColor: 'white' }} />
@@ -109,22 +108,7 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    mwgLogo: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 150,
-        height: 150,
-        backgroundColor: "yellow",
-        borderRadius: 75,
-        marginBottom: 50
-    },
-    mwgLogoTitle: {
-        color: 'black',
-        fontSize: 28,
-        fontWeight: 'bold',
-    },
     signInInput: {
-        // flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         flexWrap: 'wrap',
@@ -135,7 +119,6 @@ const styles = StyleSheet.create({
         height: 70,
         flexDirection: 'row',
         justifyContent: 'center',
-        // backgroundColor: 'blue'
     },
     registerAccount: {
         width: '90%',
@@ -143,6 +126,5 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-end',
-        // backgroundColor: 'red'
     }
 });
