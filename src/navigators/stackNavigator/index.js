@@ -3,10 +3,12 @@ import { createStackNavigator } from 'react-navigation';
 import Home from '../../screens/home';
 import Wallet from '../../screens/wallet';
 import BankConnected from '../../screens/bankconnected'
+import PhoneCard from '../../screens/home/PhoneCard';
+
 
 import History from '../../screens/history';
 import HistoryDetail from '../../screens/history/HistoryDetail'
-import Gift from '../../screens/gift'
+import Preferential from '../../screens/preferential'
 
 import Profile from '../../screens/profile';
 
@@ -15,7 +17,8 @@ export const HomeStack = createStackNavigator(
     {
         Home: Home,
         Wallet: Wallet,
-        BankConnected: BankConnected
+        BankConnected: BankConnected,
+        PhoneCard: PhoneCard
     }
 );
 
@@ -46,9 +49,9 @@ HistoryStack.navigationOptions = ({ navigation }) => {
     };
 };
 
-export const GiftStack = createStackNavigator(
+export const PreferentialStack = createStackNavigator(
     {
-        Gift: Gift
+        Preferential: Preferential
     }
 );
 

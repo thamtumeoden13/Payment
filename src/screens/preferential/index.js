@@ -5,7 +5,7 @@ import {
     View,
 } from 'react-native';
 
-export default class Gift extends Component {
+export default class Preferential extends Component {
     static navigationOptions = {
         title: 'Ưu đãi'
     }
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#eff1f4',
     },
     title: {
         fontSize: 20,

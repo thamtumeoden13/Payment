@@ -8,7 +8,7 @@ import { Icon } from 'react-native-elements';
 import {
     HomeStack,
     HistoryStack,
-    GiftStack,
+    PreferentialStack,
     ProfileStack
 } from '../stackNavigator'
 
@@ -28,10 +28,10 @@ export const Tabs = createBottomTabNavigator(
                 tabBarIcon: ({ tintColor }) => <Icon name="history" type="font-awesome" size={28} color={tintColor} />,
             },
         },
-        Gift: {
-            screen: GiftStack,
+        Preferential: {
+            screen: PreferentialStack,
             navigationOptions: {
-                tabBarLabel: 'Gift',
+                tabBarLabel: 'Preferential',
                 tabBarIcon: ({ tintColor }) => <Icon name="gift" type="font-awesome" size={28} color={tintColor} />
             },
         },

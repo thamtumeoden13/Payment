@@ -1,88 +1,124 @@
 import React, { Component } from 'react';
 import {
     StyleSheet,
+    FlatList,
+    View,
     Text,
-    View
+    TouchableOpacity
 } from 'react-native';
-import { Icon } from 'react-native-elements'
+import { Icon, ListItem } from 'react-native-elements'
 
-import { CommonItem}  from "../../components/commonItemofList"
+const info = [
+    {
+        name: 'Lê Hoàng Vũ',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+        subtitle: '097 119 6061'
+    },
+]
+
+const list1 = [
+    {
+        title: 'Thiết Lập Bảo Vệ Tài Khoản',
+        icon: 'settings',
+        type: "feather"
+    },
+    {
+        title: 'Dịch Vụ Liên Kết',
+        icon: 'link',
+        type: "feather"
+    },
+]
+const list2 = [
+    {
+        title: 'TK ZaloPay',
+        icon: 'credit-card',
+        type: 'font-awesome'
+    },
+    {
+        title: 'Ngân Hàng',
+        icon: 'credit-card-plus',
+        type: 'material-community'
+    },
+    {
+        title: 'Danh Sách Quà Tặng',
+        icon: 'gift',
+        type: 'feather'
+    },
+]
+const list3 = [
+    {
+        title: 'Trung Tâm Hỗ Trợ',
+        icon: 'headphones',
+        type: 'feather'
+    },
+    {
+        title: 'Thông Tin Ứng Dụng',
+        icon: 'infocirlceo',
+        type: 'antdesign'
+    },
+]
+
+
 
 export default class Profile extends Component {
     static navigationOptions = {
         title: 'Cá nhân'
     }
+
+    renderItemInfo = ({ item, index }) => (
+        <TouchableOpacity>
+            <ListItem
+                title={item.name}
+                subtitle={item.subtitle}
+                leftAvatar={{ source: { uri: item.avatar_url } }}
+            />
+        </TouchableOpacity>
+    )
+
+    renderItem = ({ item, index }) => (
+        <TouchableOpacity>
+            <ListItem
+                key={index}
+                title={item.title}
+                leftIcon={{ name: item.icon, type: item.type }}
+                rightIcon={{ name: "chevron-right" }}
+                bottomDivider={true}
+                containerStyle={{ backgroundColor: "#fff" }}
+
+            />
+        </TouchableOpacity>
+    )
     render() {
         return (
             <View style={styles.container}>
-                <View style={{
-                    height: 50,
-                    width: "100%",
-                    backgroundColor: "#f5f5f5",
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    marginVertical: 10
-                }}>
-                    <View style={{
-                        height: 40,
-                        width: "10%",
-                        backgroundColor: "yellow",
-                        borderRadius: 20,
-                        marginVertical: 5,
-                        marginHorizontal: 5,
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}>
-                        <Text>Logo</Text>
-                    </View>
-                    <View style={{
-                        height: 40,
-                        width: "75%",
-                        marginVertical: 5,
-                        justifyContent: "center",
-                        alignItems: "flex-start",
-                        paddingHorizontal: 5
-                    }}>
-                        <Text style={{ fontSize: 14, textAlign: "center", fontWeight: '400' }}>Lê Hoàng Vũ</Text>
-                        <Text style={{ fontSize: 10, textAlign: "center" }}>0971196061</Text>
-                    </View>
-                    <View style={{
-                        height: 40,
-                        width: "10%",
-                        marginVertical: 5,
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}>
-                        <Icon
-                            name="chevron-right"
-                            type="font-awesome"
-                            color="#a7a7a7"
-                            size={16}
-                        />
-                    </View>
+                <View>
+                    <FlatList
+                        data={info}
+                        keyExtractor={(index) => index.toString()}
+                        renderItem={this.renderItemInfo}
+                    />
                 </View>
-                <CommonItem
-                    title={"Thiết lập bảo vệ tài khoản"}
-                    leftIconName={"cog"}
-                    leftIconType={"font-awesome"}
-                    leftIconColor={"#a7a7a7"}
-                    leftIconSize={20}
-                    rightIconName={"chevron-right"}
-                    rightIconType={"font-awesome"}
-                    rightIconColor={"#a7a7a7"}
-                    rightIconSize={16}
-                />
-                <CommonItem 
-                    title={"Ngân hàng"} 
-                    leftIconName={"credit-card-plus"}
-                    leftIconType={"material-community"}
-                    leftIconColor={"#a7a7a7"}
-                    leftIconSize={20}
-                    rightIconName={"chevron-right"}
-                    rightIconType={"font-awesome"}
-                    rightIconColor={"#a7a7a7"}
-                    rightIconSize={16}
-                />
+                <View style={{ marginTop: 10 }}>
+                    <FlatList
+                        data={list1}
+                        keyExtractor={(index) => index.toString()}
+                        renderItem={this.renderItem}
+                    />
+                </View>
+                <View style={{ marginTop: 10 }}>
+                    <FlatList
+                        data={list2}
+                        keyExtractor={(index) => index.toString()}
+                        renderItem={this.renderItem}
+                    />
+                </View>
+                <View style={{ marginTop: 10 }}>
+                    <FlatList
+                        data={list3}
+                        keyExtractor={(index) => index.toString()}
+                        renderItem={this.renderItem}
+                    />
+                </View>
             </View>
         );
     }
@@ -90,13 +126,7 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    title: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
+        backgroundColor: '#eff1f4',
+        paddingHorizontal: 5
     },
 });

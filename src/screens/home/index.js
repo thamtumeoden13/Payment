@@ -12,7 +12,7 @@ import { MainMenuItem } from './MainMenuItem'
 
 import { dataMainMenu } from '../../constants/dataTest'
 
-import { formatData} from '../../untils/function'
+import { formatData } from '../../untils/function'
 
 const numColumns = 3;
 
@@ -23,10 +23,16 @@ export default class Home extends Component {
             height: 140,
         }
     }
+    onPressItem = (route) => {
+        console.log("route", route)
+        this.props.navigation.navigate(route);
+    }
+
     _renderItem = ({ item }) => (
         <MainMenuItem
             item={item}
             numColumns={numColumns}
+            onPress={this.onPressItem}
         />
     );
 
@@ -49,9 +55,7 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        backgroundColor: '#F5FCFE',
+        backgroundColor: '#eff1f4',
     },
     title: {
         fontSize: 20,
@@ -60,5 +64,7 @@ const styles = StyleSheet.create({
     },
     flatListContainer: {
         flex: 1,
+        marginVertical: 15
+        // width: "100%"
     }
 });

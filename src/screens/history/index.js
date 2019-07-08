@@ -32,7 +32,7 @@ export default class History extends Component {
         )
     }
 
-    _renderItem = ({ section, item, index }) => {
+    _renderItem = ({ section, item }) => {
         return (
             <HistoryItem
                 section={section}
@@ -42,7 +42,7 @@ export default class History extends Component {
         )
     }
 
-    _keyExtractor = (item, index) => index;
+    _keyExtractor = (item, index) => item.key.toString();
 
     gotoHistoryDetail = (item) => {
         this.props.navigation.navigate('HistoryDetail')

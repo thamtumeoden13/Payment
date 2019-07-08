@@ -9,10 +9,10 @@ import {
 
 import { Icon } from 'react-native-elements'
 
-export const MainMenuItem = ({ item, numColumns }) => {
+export const MainMenuItem = ({ item, numColumns, onPress }) => {
     const styles = StyleSheet.create({
         item: {
-            backgroundColor: '#F0F4F7',
+            backgroundColor: '#ffffff',
             justifyContent: 'center',
             alignItems: 'center',
             flex: 1,
@@ -35,8 +35,8 @@ export const MainMenuItem = ({ item, numColumns }) => {
     }
     const size = Math.floor((Dimensions.get('window').width / numColumns) / 3)
     return (
-        <View style={{flex: 1}}>
-            <TouchableOpacity>
+        <View style={{ flex: 1 }}>
+            <TouchableOpacity onPress={() => onPress(item.route)}>
                 <View style={styles.item}>
                     <Icon
                         name={item.icon.name}

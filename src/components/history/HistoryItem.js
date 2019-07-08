@@ -5,40 +5,25 @@ import {
     View,
     TouchableOpacity
 } from 'react-native';
-import { SearchBar, Icon } from 'react-native-elements'
+import { SearchBar, Icon, ListItem } from 'react-native-elements'
 
 import { useNavigation } from 'react-navigation-hooks'
 
-export const HistoryItem = ({ section, item, onPress }) => {
-
+export const HistoryItem = ({ section, item, index, onPress }) => {
+    console.log("index", item.key)
     const { navigate } = useNavigation();
 
     return (
         <TouchableOpacity onPress={onPress}>
-            <View style={styles.container}>
-                <View style={styles.containerIcon}>
-                    <Icon
-                        name="list"
-                        type="font-awesome"
-                        color="blue"
-                        size={20}
+            <ListItem
+                key={item.key}
+                title={item.title}
+                leftIcon={{ name: item.icon, type: item.type }}
+                rightIcon={{ name: "chevron-right" }}
+                bottomDivider={true}
+                containerStyle={{ backgroundColor: "#fff" }}
 
-                    />
-                </View>
-                <View style={styles.containerContent}>
-                    <Text style={styles.titleItem} >
-                        {item.title}
-                    </Text>
-                    <Text style={styles.contentItem} >
-                        {item.day}/{section.month} {item.hours}:{item.minute}
-                    </Text>
-                </View>
-                <View style={styles.containerRight}>
-                    <Text style={styles.SectionListItem} >
-                        {item.cost}
-                    </Text>
-                </View>
-            </View>
+            />
         </TouchableOpacity>
     )
 }
