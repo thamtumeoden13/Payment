@@ -98,7 +98,7 @@ export default class Profile extends Component {
                         renderItem={this.renderItemInfo}
                     />
                 </View>
-                <View style={{ marginTop: 10 }}>
+                {/* <View style={{ marginTop: 10 }}>
                     <FlatList
                         data={list1}
                         keyExtractor={(index) => index.toString()}
@@ -118,7 +118,7 @@ export default class Profile extends Component {
                         keyExtractor={(index) => index.toString()}
                         renderItem={this.renderItem}
                     />
-                </View>
+                </View> */}
             </View>
         );
     }

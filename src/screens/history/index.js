@@ -24,7 +24,7 @@ export default class History extends Component {
 
     _renderSectionHeader = ({ section }) => {
         return (
-            <View style={styles.SectionListHeader}> 
+            <View style={styles.SectionListHeader}>
                 <Text style={styles.SectionListHeaderText}>
                     Tháng {section.month < 10 ? '0' + section.month : section.month}/{section.year}
                 </Text>
@@ -68,6 +68,7 @@ export default class History extends Component {
                         renderSectionHeader={this._renderSectionHeader}
                         renderItem={this._renderItem}
                         keyExtractor={this._keyExtractor}
+                        style={{ backgroundColor: '#eff1f4' }}
                     />
                 </View>
             </View>
@@ -80,45 +81,22 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#eff1f4',
     },
     SectionListHeader: {
-        height: 30,
+        height: 40,
         justifyContent: "center",
         alignItems: "flex-start",
         backgroundColor: '#64B5F6',
-        marginHorizontal: 5
     },
     SectionListHeaderText: {
         fontSize: 16,
-        // padding: 5,
         color: '#fff',
         fontWeight: 'bold'
     },
-    titleItem: {
-        fontWeight: 'bold',
-        fontSize: 14,
-        color: '#000',
-    },
-    contentItem: {
-        fontSize: 12,
-        color: '#000',
-    },
-    viewHeader: {
-        flex: 1,
-        margin: 10,
-        borderRadius: 4,
-        shadowOffset: { width: 1, height: 1, },
-        shadowColor: '#CCC',
-        shadowOpacity: 1.0,
-        shadowRadius: 1,
-        backgroundColor: '#FFF',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
     viewSectionList: {
         flex: 1,
-        margin: 10,
-        width: '100%'
+        width: '100%',
+        // backgroundColor: '#eff1f4',
     }
 });
