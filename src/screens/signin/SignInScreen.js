@@ -5,10 +5,12 @@ import {
     View,
     LayoutAnimation,
     UIManager,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform,
 } from 'react-native';
 import { Divider } from 'react-native-elements';
 import { Logo, SignInInput, SignInButton, SignInSocial } from '../../components/signin'
+import DeviceInfo from 'react-native-device-info';
 
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
@@ -53,6 +55,10 @@ export default class SignInScreen extends Component {
     }
 
     render() {
+        console.log("Platform.Version", DeviceInfo.isLocationEnabled())
+        navigator.geolocation.watchPosition((position) => {
+            console.log("position", position)
+        })
         const { email, password, isEmailValid, isPasswordValid, isLoading } = this.state;
         return (
             <View style={styles.container}>
